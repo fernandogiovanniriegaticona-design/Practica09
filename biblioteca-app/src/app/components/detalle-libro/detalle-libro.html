@@ -1,0 +1,41 @@
+<div class="detalle-container">
+  <mat-card class="detalle-card" *ngIf="libro; else libroNoEncontrado">
+    <mat-card-header>
+      <mat-card-title>{{ libro.titulo }}</mat-card-title>
+      <mat-card-subtitle>Categoría: {{ libro.categoria }}</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content class="content-body">
+      <div class="info-row">
+        <strong>Código (ID):</strong> <span>{{ libro.id }}</span>
+      </div>
+      <div class="info-row">
+        <strong>Autor:</strong> <span>{{ libro.autor }}</span>
+      </div>
+      <div class="info-row">
+        <strong>Ejemplares Disponibles:</strong> 
+        <span class="badge" [class.low]="libro.disponibles < 5">{{ libro.disponibles }}</span>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="warn" routerLink="/">
+        Volver al Catálogo
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <ng-template #libroNoEncontrado>
+    <mat-card class="detalle-card error-card">
+      <mat-card-title>Libro no encontrado</mat-card-title>
+      <mat-card-content>
+        <p>El libro solicitado no existe en el catálogo de la facultad.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" routerLink="/">
+          Regresar al Inicio
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-template>
+</div>

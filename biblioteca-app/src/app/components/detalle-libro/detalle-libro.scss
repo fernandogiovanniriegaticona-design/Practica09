@@ -1,0 +1,39 @@
+.detalle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding: 16px;
+}
+
+.detalle-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+}
+
+.content-body {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.info-row {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.badge {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.badge.low {
+  color: #c62828;
+}
+
+.error-card {
+  text-align: center;
+}
