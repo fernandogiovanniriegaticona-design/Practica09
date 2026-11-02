@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home';
-import { DetalleLibroComponent } from './components/detalle-libro/detalle-libro';
+import { LibroListComponent } from './components/libro-list/libro-list.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'libro/:id', component: DetalleLibroComponent },
-  { path: '**', redirectTo: '' }
+  { path: 'libros', component: LibroListComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'dashboard' }
 ];
